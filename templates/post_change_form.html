@@ -1,0 +1,17 @@
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+
+    {% if not original.is_published %}
+    <div class="submit-row">
+        <input type="submit" value="Опубликовать в телеграм боте" name="publish-telegram">
+    </div>
+    {% else %}
+        <div class="submit-row">
+        Вы уже опубликовали сообщение об этом посте в телеграм. <br>
+        Если хотите отправить еще раз сообщение об этом блоге, то уберите галочку в в столбце "ОТМЕТКА ОБ ОТПРАВЛЕНИИ<br>
+        и сохраните этот пост. После этого будет доступна кнопка "Опубликовать в телеграм боте"
+        </div>
+    {% endif %}
+{% endblock %}

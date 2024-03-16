@@ -1,0 +1,33 @@
+
+{% extends 'admin/change_form.html' %}
+
+{% block submit_buttons_bottom %}
+    {{ block.super }}
+
+    {% if not original.is_sent %}
+    <div class="submit-row">
+        <input type="submit" value="Отправить ответ" name="message-answer">
+    </div>
+    {% else %}
+        <div class="submit-row">
+        Вы уже отправили ответ на сообщение в телеграм. <br>
+        Если хотите отправить еще раз сообщение об этом блоге, то уберите галочку в столбце "ОТМЕТКА ОБ ОТПРАВЛЕНИИ"<br>
+        и сохраните это сообщение. После этого будет доступна кнопка "Отправить ответ""
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+
+
+
+
+{#<form method="POST" action="{% url 'message_answer' %}">#}
+{#    {% csrf_token %}#}
+{#    {{ form.as_p }}#}
+{#    <input type="text" name="CHAT_ID">#}
+{#    <input type="text" name="Message">#}
+{#    <button type="submit">Создать</button>#}
+{#</form>#}
+
+

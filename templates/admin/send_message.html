@@ -1,0 +1,12 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Введите сообщение для отправки:</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Отправить сообщение</button>
+    </form>
+</body>
+</html>
